@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var currentOperator: Operator = Operator.nothing
+    var calcState: CalculationState = CalculationState.enteringNumber
 
     @IBOutlet weak var resultLabel: UILabel!
     override func viewDidLoad() {
