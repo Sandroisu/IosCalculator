@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <device id="ipad10_2" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="WdA-y1-zI3">
-                                <rect key="frame" x="58" y="304.66666666666669" width="314" height="323.00000000000006"/>
+                                <rect key="frame" x="248" y="378.5" width="314" height="323"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="gah-Yj-0o5">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="65"/>
@@ -203,7 +203,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="HGx-Zb-3v7">
-                                        <rect key="frame" x="0.0" y="257.99999999999994" width="314" height="65"/>
+                                        <rect key="frame" x="0.0" y="258" width="314" height="65"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYD-2l-RsQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
@@ -251,8 +251,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn5-fC-ObP">
+                                <rect key="frame" x="355" y="318" width="100" height="45"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Luv-NY-ppi"/>
+                                    <constraint firstAttribute="height" constant="45" id="Sc5-wI-b83"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-XP-4rZ">
-                                <rect key="frame" x="77.666666666666686" y="209" width="275" height="65"/>
+                                <rect key="frame" x="267.5" y="245" width="275" height="65"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="Cpk-4C-GVO"/>
@@ -266,14 +277,17 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WdA-y1-zI3" firstAttribute="top" secondItem="gGr-XP-4rZ" secondAttribute="bottom" constant="30.666666666666686" id="83C-XP-PHy"/>
+                            <constraint firstItem="WdA-y1-zI3" firstAttribute="top" secondItem="Hn5-fC-ObP" secondAttribute="bottom" constant="15.666666666666686" id="63e-0T-BPM"/>
+                            <constraint firstItem="WdA-y1-zI3" firstAttribute="top" secondItem="gGr-XP-4rZ" secondAttribute="bottom" constant="68.5" id="E3M-Rs-Dol"/>
                             <constraint firstItem="WdA-y1-zI3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WU8-I7-w4U"/>
                             <constraint firstItem="gGr-XP-4rZ" firstAttribute="centerX" secondItem="WdA-y1-zI3" secondAttribute="centerX" id="Zxk-lN-rHc"/>
                             <constraint firstItem="WdA-y1-zI3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aTK-Bk-PVc"/>
                             <constraint firstItem="gGr-XP-4rZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="amg-J8-sGU"/>
+                            <constraint firstItem="Hn5-fC-ObP" firstAttribute="centerX" secondItem="WdA-y1-zI3" secondAttribute="centerX" id="bJO-qt-LGg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="operatorLabel" destination="Hn5-fC-ObP" id="Rfo-gA-Ugb"/>
                         <outlet property="resultLabel" destination="gGr-XP-4rZ" id="IED-GR-rgk"/>
                     </connections>
                 </viewController>

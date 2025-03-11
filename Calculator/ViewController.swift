@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     
     var firstValue: String = ""
 
+    @IBOutlet weak var operatorLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -36,16 +38,20 @@ class ViewController: UIViewController {
                 resultLabel.text = ""
             }
         }
-        
+        updateOperatorButton(tag: sender.tag)
         switch sender.tag {
             case 10:
             currentOperator = Operator.add
+            operatorLabel.text = firstValue + "+"
             case 11:
             currentOperator = Operator.subtract
+            operatorLabel.text = firstValue + "-"
             case 12:
             currentOperator = Operator.multiply
+            operatorLabel.text = firstValue + "*"
             case 13:
             currentOperator = Operator.divide
+            operatorLabel.text = firstValue + "/"
             default:
             break
         }
@@ -53,6 +59,18 @@ class ViewController: UIViewController {
     
     @IBAction func equalsClicked(_ sender: UIButton) {
         calculate()
+    }
+    
+    private func updateOperatorButton(tag: Int) {
+        for i in 10..<14 {
+            if let button = self.view.viewWithTag(i) as? UIButton {
+                button.backgroundColor = UIColor.clear
+            }
+        }
+        
+        if let button = self.view.viewWithTag(tag) as? UIButton {
+            button.backgroundColor = UIColor.yellow
+        }
     }
                       
     private func updateDisplay(number: String) {
@@ -70,16 +88,22 @@ class ViewController: UIViewController {
     }
     
     private func calculate() {
+        operatorLabel.text = ""
         var result: String = ""
+        for i in 10..<14 {
+            if let button = self.view.viewWithTag(i) as? UIButton {
+                button.backgroundColor = UIColor.clear
+            }
+        }
         switch currentOperator {
         case Operator.add:
-            result = String(Int(firstValue)! + Int(resultLabel.text!)!)
+            result = String(Double(firstValue)! + Double(resultLabel.text!)!)
         case Operator.subtract:
-            result = String(Int(firstValue)! - Int(resultLabel.text!)!)
+            result = String(Double(firstValue)! - Double(resultLabel.text!)!)
         case Operator.multiply:
-            result = String(Int(firstValue)! * Int(resultLabel.text!)!)
+            result = String(Double(firstValue)! * Double(resultLabel.text!)!)
         case Operator.divide:
-            result = String(Int(firstValue)! / Int(resultLabel.text!)!)
+            result = String(Double(firstValue)! / Double(resultLabel.text!)!)
         default:
             break
         }
